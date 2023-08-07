@@ -1,33 +1,19 @@
 import React from 'react';
-// import './App.css';
-// import { createTheme, ThemeProvider } from '@mui/material';
 import Navbar from './components/navbar.jsx';
-import { Outlet } from 'react-router-dom';
-import Grid from '@mui/material';
-
-// const theme = createTheme ({
-//   palette: {
-//     primary: {
-//       main: '#178c8e',
-//       darker: '#14504D',
-//     },
-//   },
-// })
+import theme from './theme.jsx';
+import { ThemeProvider } from '@mui/material';
+import { Outlet } from "react-router-dom";
+import Grid from '@mui/material/Grid';
 
 function App() {
   return (
-    // <ThemeProvider theme={theme}>
-    <>
-      <Grid container>
-        <Navbar />
-        <Outlet />
-      </Grid>
-        <div>
-          Is this working?
-        </div>
-    </>
-    // {/* </ThemeProvider> */}
-  )
+        <ThemeProvider theme={theme}>
+          <Grid container>
+            <Navbar />
+            <Outlet />
+          </Grid>
+        </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
